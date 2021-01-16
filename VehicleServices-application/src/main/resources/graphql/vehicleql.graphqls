@@ -1,0 +1,25 @@
+type Vehicle {
+	id: ID!,
+	name: String,
+	msidn: String,
+	engineStatus: String,
+	fleet: String,
+	brand: String,
+	countryOfOperation: String,
+	chassisNumber: String,
+	cassisSeries: String,
+}
+
+type Service {
+	id: ID!,
+	serviceName: String,
+	status: String,
+	lastUpdate: String,
+	vehicleID: Int
+}
+
+type Query {
+	vehicles(name: String):[Vehicle]
+	vehiclesByStatus(status: String):[Vehicle]
+	vehicle(id: ID):Vehicle
+}
